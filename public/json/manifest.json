@@ -1,0 +1,17 @@
+{
+    "name": "Laurario",
+    "short_name": "Laurario",
+    "description": "Orario di lezioni personale",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#ffb300",
+    "background_color": "#ffb300",
+    "icons": [
+        {
+            "src": "/img/icona.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        }
+    ]
+}

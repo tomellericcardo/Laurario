@@ -17,6 +17,12 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/opzioni.css">
 
+        <!-- ANDROID -->
+        <link rel="manifest" href="/json/manifest.json">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" type="image/png" sizes="64x64" href="/img/icona.png">
+        <meta name="theme-color" content="#ffb300">
+
     </head>
     <body>
 
@@ -26,38 +32,52 @@
 
                 <!-- TITLE -->
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <i class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</i>
+                    <i id="home" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</i>
                     <span class="mdc-top-app-bar__title">Opzioni</span>
                 </section>
 
             </div>
         </header>
 
-        <!-- OPTIONS -->
-        <div class="page-content">
+        <!-- OPZIONI -->
+        <div class="mdc-layout-grid page-content">
+            <div class="mdc-layout-grid__inner">
 
-            <!-- SETTIMANA -->
-            <div class="mdc-text-field">
-                <input type="text" id="my-text-field" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="my-text-field">Data</label>
-                <div class="mdc-line-ripple"></div>
+                <!-- INPUT -->
+                <div class="mdc-layout-grid__cell">
+
+                    <!-- SETTIMANA -->
+                    <div class="mdc-select" id="date_input_container">
+                        <input type="date" id="date_input">
+                        <label class="mdc-floating-label mdc-floating-label--float-above">Settimana</label>
+                    </div>
+
+                    <!-- COLORAZIONE -->
+                    <div class="mdc-select" id="select_container">
+                        <select id="select_colore" class="mdc-select__native-control">
+                            <option value="" disabled selected></option>
+                            <option value="0">
+                                Per insegnamento
+                            </option>
+                            <option value="1">
+                                Obbligatorie/consigliate
+                            </option>
+                        </select>
+                        <label class="mdc-floating-label">Colorazione</label>
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+
+                </div>
+
+                <!-- VAI -->
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell">
+                    <button id="vai" class="mdc-button mdc-button--raised">
+                        <i class="material-icons mdc-button__icon" aria-hidden="true">keyboard_arrow_right</i>
+                        ORARIO
+                    </button>
+                </div>
+
             </div>
-
-            <!-- COLORAZIONE -->
-            <div class="mdc-select">
-                <select class="mdc-select__native-control">
-                    <option value="" disabled selected></option>
-                    <option value="insegnamento">
-                        Per insegnamento
-                    </option>
-                    <option value="importanza">
-                        Obbligatorie/consigliate
-                    </option>
-                </select>
-                <label class="mdc-floating-label">Colorazione</label>
-                <div class="mdc-line-ripple"></div>
-            </div>
-
         </div>
 
         <!-- SCRIPTS -->

@@ -30,18 +30,24 @@ var home = {
 
     questa_settimana: function() {
         var url = 'https://logistica.univr.it/aule/Orario/?list=0&anno=2018&corso=338&anno2=779%7C1&visualizzazione_orario=cal&view=easycourse&include=corso&_lang=it&col_cells=0&date=';
-        window.location.href = url + home.crea_data(false);
+        url +=  home.crea_data(false);
+        window.location.href = url;
     },
 
     prossima_settimana: function() {
         var url = 'https://logistica.univr.it/aule/Orario/?list=0&anno=2018&corso=338&anno2=779%7C1&visualizzazione_orario=cal&view=easycourse&include=corso&_lang=it&col_cells=0&date=';
-        window.location.href = url + home.crea_data(true);
+        url +=  home.crea_data(true);
+        window.location.href = url;
     },
 
     crea_data: function(settimana) {
         var data = new Date();
-        if (settimana)
-            data.setDate(data.getDate() + 7);
+        if (settimana) {
+            var giorno = data.getDay();
+            if (giorno == 0)
+                giorno = 7
+            data.setDate(data.getDate() + (8 - giorno));
+        }
         var dd = data.getDate();
         var mm = data.getMonth() + 1;
         var yyyy = data.getFullYear();
