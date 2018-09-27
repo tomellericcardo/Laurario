@@ -9,9 +9,13 @@ app = Flask(__name__)
 
 # Homepage
 @app.route('/')
-@app.route('/home')
 def home():
     return send_from_directory('public/html/', 'home.html')
+
+# Pagine
+@app.route('/<pagina>')
+def invia_pagina(pagina):
+    return send_from_directory('public/html/', pagina + '.html')
 
 # Altri files
 @app.route('/<cartella>/<nome_file>')

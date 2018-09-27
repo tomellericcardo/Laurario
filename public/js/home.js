@@ -2,8 +2,6 @@ var home = {
 
     init: function() {
         home.init_navbar();
-        home.init_menu();
-        home.init_about();
         home.init_ripple();
         home.init_orario();
     },
@@ -13,20 +11,6 @@ var home = {
         mdc.topAppBar.MDCTopAppBar.attachTo(element);
         var height = $('.mdc-top-app-bar').css('height');
         $('.page-content').css('padding-top', height);
-    },
-
-    init_menu: function() {
-        var element = $('.mdc-menu')[0];
-        var menu = new mdc.menu.MDCMenu(element);
-        $('#menu-icon').on('click', function() {
-            menu.open = !menu.open;
-        });
-    },
-
-    init_about: function() {
-        $('#about').on('click', function() {
-            window.location.href = '/informazioni';
-        });
     },
 
     init_ripple: function() {

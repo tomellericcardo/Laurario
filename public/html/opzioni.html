@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+    <head>
+
+        <title>Laurario</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffb300">
+
+        <!-- FONTS & ICONS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <!-- STYLES -->
+        <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/opzioni.css">
+
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+
+                <!-- TITLE -->
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <i class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</i>
+                    <span class="mdc-top-app-bar__title">Opzioni</span>
+                </section>
+
+            </div>
+        </header>
+
+        <!-- OPTIONS -->
+        <div class="page-content">
+
+            <!-- SETTIMANA -->
+            <div class="mdc-text-field">
+                <input type="text" id="my-text-field" class="mdc-text-field__input">
+                <label class="mdc-floating-label" for="my-text-field">Data</label>
+                <div class="mdc-line-ripple"></div>
+            </div>
+
+            <!-- COLORAZIONE -->
+            <div class="mdc-select">
+                <select class="mdc-select__native-control">
+                    <option value="" disabled selected></option>
+                    <option value="insegnamento">
+                        Per insegnamento
+                    </option>
+                    <option value="importanza">
+                        Obbligatorie/consigliate
+                    </option>
+                </select>
+                <label class="mdc-floating-label">Colorazione</label>
+                <div class="mdc-line-ripple"></div>
+            </div>
+
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+        <script src="/js/opzioni.js"></script>
+
+    </body>
+</html>

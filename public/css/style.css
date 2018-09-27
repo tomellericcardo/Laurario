@@ -1,8 +1,8 @@
 :root {
     --mdc-theme-primary: #ffb300;
     --mdc-theme-secondary: #ff5722;
-    --mdc-theme-on-primary: #000000;
-    --mdc-theme-on-secondary: #000000;
+    --mdc-theme-on-primary: #ffffff;
+    --mdc-theme-on-secondary: #ffffff;
 }
 
 body {
