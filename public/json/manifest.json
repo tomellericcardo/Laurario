@@ -9,8 +9,13 @@
     "background_color": "#ffb300",
     "icons": [
         {
-            "src": "/img/icona.png",
+            "src": "/img/icona64.png",
             "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icona128.png",
+            "sizes": "128x128",
             "type": "image/png"
         }
     ]
