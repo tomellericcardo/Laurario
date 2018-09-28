@@ -26,6 +26,9 @@ var home = {
         $('#prossima_settimana').on('click', function () {
             home.prossima_settimana();
         });
+        $('#insegnamento').on('click', function () {
+            window.location.href = 'https://logistica.univr.it/aule/Orario/?view=easycourse&include=attivita&_lang=it';
+        });
     },
 
     questa_settimana: function() {

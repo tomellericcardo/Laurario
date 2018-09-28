@@ -6,7 +6,8 @@ var opzioni = {
         opzioni.init_home();
         opzioni.init_data();
         opzioni.init_select();
-        opzioni.init_vai();
+        var snackbar = opzioni.init_snackbar();
+        opzioni.init_vai(snackbar);
     },
 
     init_navbar: function() {
@@ -18,7 +19,7 @@ var opzioni = {
     },
 
     init_ripple: function() {
-        var elements = $('.mdc-line-ripple');
+        var elements = $('.mdc-line-ripple, .mdc-button');
         for (var i = 0; i < elements.length; i++)
             mdc.ripple.MDCRipple.attachTo(elements[i]);
     },
@@ -47,7 +48,13 @@ var opzioni = {
         mdc.select.MDCSelect.attachTo(element);
     },
 
-    init_vai: function() {
+    init_snackbar: function() {
+        var element = $('.mdc-snackbar')[0];
+        var snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
+        return snackbar;
+    },
+
+    init_vai: function(snackbar) {
         $('#vai').on('click', function() {
             var settimana = $('#date_input').val();
             var colore = $('#select_colore').val();
@@ -57,7 +64,8 @@ var opzioni = {
                 url += '&col_cells=' + colore;
                 url += '&date=' + settimana;
                 window.location.href = url;
-            }
+            } else
+                snackbar.show({message: 'Completa tutti i campi'});
         });
     },
 
