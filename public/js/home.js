@@ -45,18 +45,19 @@ var home = {
 
     crea_data: function(settimana) {
         var data = new Date();
-        if (settimana) {
-            var giorno = data.getDay();
-            if (giorno == 0)
-                giorno = 7
-            data.setDate(data.getDate() + (8 - giorno));
+        var giorno = data.getDay();
+        if (giorno == 0) {
+            data.setDate(data.getDate() + 1);
+            giorno = 1;
         }
+        if (settimana)
+            data.setDate(data.getDate() + (8 - giorno));
         var dd = data.getDate();
         var mm = data.getMonth() + 1;
         var yyyy = data.getFullYear();
-        if(dd < 10)
+        if (dd < 10)
             dd = '0' + dd;
-        if(mm < 10)
+        if (mm < 10)
             mm = '0' + mm;
         var oggi = dd + '-' + mm + '-' + yyyy;
         return oggi;

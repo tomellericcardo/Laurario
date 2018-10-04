@@ -32,6 +32,9 @@ var opzioni = {
 
     init_data: function() {
         var data = new Date();
+        var giorno = data.getDay();
+        if (giorno == 0)
+            data.setDate(data.getDate() + 1);
         var dd = data.getDate();
         var mm = data.getMonth() + 1;
         var yyyy = data.getFullYear();
