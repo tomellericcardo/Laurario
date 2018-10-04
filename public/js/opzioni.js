@@ -32,9 +32,6 @@ var opzioni = {
 
     init_data: function() {
         var data = new Date();
-        var giorno = data.getDay();
-        if (giorno == 0)
-            data.setDate(data.getDate() + 1);
         var dd = data.getDate();
         var mm = data.getMonth() + 1;
         var yyyy = data.getFullYear();
@@ -73,8 +70,18 @@ var opzioni = {
     },
 
     converti_data: function(settimana) {
-        var data = settimana.split('-');
-        return data[2] + '-' + data[1] + '-' + data[0];
+        var data = new Date(settimana);
+        var giorno = data.getDay();
+        if (giorno == 0)
+            data.setDate(data.getDate() + 1);
+        var dd = data.getDate();
+        var mm = data.getMonth() + 1;
+        var yyyy = data.getFullYear();
+        if(dd < 10)
+            dd = '0' + dd;
+        if(mm < 10)
+            mm = '0' + mm;
+        return dd + '-' + mm + '-' + yyyy;
     }
 
 };
