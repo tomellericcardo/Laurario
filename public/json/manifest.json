@@ -1,7 +1,7 @@
 {
     "name": "Laurario",
     "short_name": "Laurario",
-    "description": "Orario di lezioni personale",
+    "description": "Orario personale delle lezioni universitarie",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
