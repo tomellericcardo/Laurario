@@ -1,3 +1,4 @@
 # Laurario
 Orario personale delle lezioni universitarie.
-[Visitalo!](http://laurario.tomellericcardo.it)
+
+[**VISITALO**](http://laurario.tomellericcardo.it)
