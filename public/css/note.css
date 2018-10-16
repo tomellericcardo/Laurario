@@ -1,6 +1,17 @@
 .mdc-card__primary-action {
     padding-left: 20px;
-    padding-bottom: 10px;
+}
+
+.mdc-card {
+    margin-bottom: 20px;
+}
+
+.text {
+    margin-top: 0;
+}
+
+#note {
+    padding-bottom: 100px;
 }
 
 #elemento_titolo {
