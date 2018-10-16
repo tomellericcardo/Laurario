@@ -38,26 +38,28 @@ var note = {
     },
 
     init_aggiungi: function() {
-        var titolo = $('#titolo').val();
-        var testo = $('#testo').val();
-        if (titolo.length > 0 && testo.length > 0) {
-            $.ajax({
-                type: 'POST',
-                url: 'aggiungi_nota',
-                contentType: 'application/json',
-                dataType: 'json',
-                data: JSON.stringify({
-                    titolo: titolo,
-                    testo: testo
-                }),
-                success: function(risultato) {
-                    note.dialog.close();
-                },
-                error: function() {
-                    note.snackbar.show({message: 'Impossibile aggiungere la nota!'});
-                }
-            });
-        }
+        $('#aggiungi').on('click', function() {
+            var titolo = $('#titolo').val();
+            var testo = $('#testo').val();
+            if (titolo.length > 0 && testo.length > 0) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'aggiungi_nota',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    data: JSON.stringify({
+                        titolo: titolo,
+                        testo: testo
+                    }),
+                    success: function(risultato) {
+                        note.dialog.close();
+                    },
+                    error: function() {
+                        note.snackbar.show({message: 'Impossibile aggiungere la nota!'});
+                    }
+                });
+            }
+        });
     },
 
     leggi_note: function() {
