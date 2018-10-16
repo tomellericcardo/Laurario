@@ -6,7 +6,7 @@ from json import dumps
 
 
 app = Flask(__name__)
-db_url = os.environ['DATABASE_URL']
+db_url = environ['DATABASE_URL']
 manager = Manager(g, db_url)
 
 
