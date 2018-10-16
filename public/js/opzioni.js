@@ -1,33 +1,17 @@
 var opzioni = {
 
     init: function() {
-        opzioni.init_navbar();
         opzioni.init_ripple();
-        opzioni.init_home();
         opzioni.init_data();
         opzioni.init_select();
-        var snackbar = opzioni.init_snackbar();
-        opzioni.init_vai(snackbar);
-    },
-
-    init_navbar: function() {
-        var element = $('.mdc-top-app-bar')[0];
-        mdc.topAppBar.MDCTopAppBar.attachTo(element);
-        var height = $('.mdc-top-app-bar').css('height');
-        height = (parseInt(height) + 20) + 'px';
-        $('.page-content').css('padding-top', height);
+        opzioni.init_snackbar();
+        opzioni.init_vai();
     },
 
     init_ripple: function() {
         var elements = $('.mdc-line-ripple, .mdc-button');
         for (var i = 0; i < elements.length; i++)
             mdc.ripple.MDCRipple.attachTo(elements[i]);
-    },
-
-    init_home: function() {
-        $('#home').on('click', function() {
-            window.location.href = '/home';
-        });
     },
 
     init_data: function() {
@@ -50,11 +34,10 @@ var opzioni = {
 
     init_snackbar: function() {
         var element = $('.mdc-snackbar')[0];
-        var snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
-        return snackbar;
+        opzioni.snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
     },
 
-    init_vai: function(snackbar) {
+    init_vai: function() {
         $('#vai').on('click', function() {
             var settimana = $('#date_input').val();
             var colore = $('#select_colore').val();
@@ -65,7 +48,7 @@ var opzioni = {
                 url += '&date=' + settimana;
                 window.location.href = url;
             } else
-                snackbar.show({message: 'Completa tutti i campi'});
+                opzioni.snackbar.show({message: 'Completa tutti i campi'});
         });
     },
 

@@ -1,16 +1,8 @@
 var home = {
 
     init: function() {
-        home.init_navbar();
         home.init_ripple();
         home.init_orario();
-    },
-
-    init_navbar: function() {
-        var element = $('.mdc-top-app-bar')[0];
-        mdc.topAppBar.MDCTopAppBar.attachTo(element);
-        var height = $('.mdc-top-app-bar').css('height');
-        $('.page-content').css('padding-top', height);
     },
 
     init_ripple: function() {

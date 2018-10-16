@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
     <head>
 
-        <title>Laurario</title>
+        <title>Note</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
         <!-- STYLES -->
         <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
         <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/opzioni.css">
+        <link rel="stylesheet" href="/css/note.css">
 
         <!-- ANDROID -->
         <link rel="manifest" href="/json/manifest.json">
@@ -32,51 +32,17 @@
                 <!-- TITLE -->
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <i id="home" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</i>
-                    <span class="mdc-top-app-bar__title">Opzioni</span>
+                    <span class="mdc-top-app-bar__title">Note</span>
                 </section>
 
             </div>
         </header>
 
-        <!-- OPZIONI -->
-        <div class="mdc-layout-grid page-content">
-            <div class="mdc-layout-grid__inner">
+        <!-- NOTE -->
+        <div id="note" class="mdc-list mdc-list--two-line page-content" aria-orientation="vertical">
 
-                <!-- INPUT -->
-                <div class="mdc-layout-grid__cell">
+            <p>CIAO</p>
 
-                    <!-- SETTIMANA -->
-                    <div class="mdc-select" id="date_input_container">
-                        <input type="date" id="date_input">
-                        <label class="mdc-floating-label mdc-floating-label--float-above">Settimana</label>
-                    </div>
-
-                    <!-- COLORAZIONE -->
-                    <div class="mdc-select" id="select_container">
-                        <select id="select_colore" class="mdc-select__native-control">
-                            <option value="" disabled selected></option>
-                            <option value="0">
-                                Per insegnamento
-                            </option>
-                            <option value="1">
-                                Obbligatorie/consigliate
-                            </option>
-                        </select>
-                        <label class="mdc-floating-label">Colorazione</label>
-                        <div class="mdc-line-ripple"></div>
-                    </div>
-
-                </div>
-
-                <!-- VAI -->
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell">
-                    <button id="vai" class="mdc-button mdc-button--raised">
-                        <i class="material-icons mdc-button__icon" aria-hidden="true">keyboard_arrow_right</i>
-                        ORARIO
-                    </button>
-                </div>
-
-            </div>
         </div>
 
         <!-- MESSAGGIO -->
@@ -94,7 +60,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <script src="/js/navbar.js"></script>
-        <script src="/js/opzioni.js"></script>
+        <script src="/js/note.js"></script>
 
     </body>
 </html>
