@@ -21,9 +21,6 @@ var note = {
         $('#nuova_nota').on('click', function() {
             note.dialog.open();
         });
-        $('#annulla').on('click', function() {
-            note.dialog.close();
-        });
     },
 
     init_fields: function() {
@@ -41,28 +38,32 @@ var note = {
         $('#aggiungi').on('click', function() {
             var titolo = $('#titolo').val();
             var testo = $('#testo').val();
-            if (titolo.length > 0 && testo.length > 0) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'aggiungi_nota',
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    data: JSON.stringify({
-                        titolo: titolo,
-                        testo: testo
-                    }),
-                    success: function(risultato) {
-                        note.leggi_note();
-                        note.dialog.close();
-                        $('#titolo, #testo').val('');
-                        note.snackbar.show({message: 'Nota aggiunta!'});
-                    },
-                    error: function() {
-                        note.snackbar.show({message: 'Impossibile aggiungere la nota!'});
-                    }
-                });
-            } else
+            if (titolo.length > 0 && testo.length > 0)
+                note.aggiungi(titolo, testo);
+            else
                 note.snackbar.show({message: 'Completa i campi!'});
+        });
+    },
+
+    aggiungi: function(titolo, testo) {
+        $.ajax({
+            type: 'POST',
+            url: 'aggiungi_nota',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({
+                titolo: titolo,
+                testo: testo
+            }),
+            success: function(risposta) {
+                note.leggi_note();
+                note.dialog.close();
+                $('#titolo, #testo').val('');
+                note.snackbar.show({message: 'Nota aggiunta!'});
+            },
+            error: function() {
+                note.snackbar.show({message: 'Impossibile aggiungere la nota!'});
+            }
         });
     },
 
@@ -72,11 +73,45 @@ var note = {
             url: 'leggi_note',
             contentType: 'application/json',
             dataType: 'json',
-            success: function(risultato) {
-                $('#note').html(risultato.note.toString());
+            success: function(risposta) {
+                risposta = note.formatta_note(risposta);
+                $.get('/html/templates.html', function(contenuto) {
+                    var template = $(contenuto).filter('#note').html();
+                    $('#note').html(Mustache.render(template, risposta));
+                });
             },
             error: function() {
                 note.snackbar.show({message: 'Impossibile leggere le note!'});
+            }
+        });
+    },
+
+    formatta_note: function(risposta) {
+        for (var i = 0; i < risposta.note.length; i++) {
+            risposta.note[i] = {
+                id: risposta.note[i][0],
+                titolo: risposta.note[i][1],
+                testo: risposta.note[i][2],
+            };
+        }
+        return risposta;
+    },
+
+    elimina_nota: function(id) {
+        $.ajax({
+            type: 'POST',
+            url: 'elimina_nota',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify({
+                id: id
+            }),
+            success: function(risposta) {
+                note.leggi_note();
+                note.snackbar.show({message: 'Nota eliminata!'});
+            },
+            error: function() {
+                note.snackbar.show({message: 'Impossibile eliminare la nota!'});
             }
         });
     }
