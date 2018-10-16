@@ -11,7 +11,7 @@ var note = {
 
     init_ripple: function() {
         var elements = $('.mdc-button, .mdc-fab');
-        for (element in elements)
+        for (var i = 0; i < elements.length; i++)
             mdc.ripple.MDCRipple.attachTo(element);
     },
 
