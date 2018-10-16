@@ -52,13 +52,17 @@ var note = {
                         testo: testo
                     }),
                     success: function(risultato) {
+                        note.leggi_note();
                         note.dialog.close();
+                        $('#titolo, #testo').val('');
+                        note.snackbar.show({message: 'Nota aggiunta!'});
                     },
                     error: function() {
                         note.snackbar.show({message: 'Impossibile aggiungere la nota!'});
                     }
                 });
-            }
+            } else
+                note.snackbar.show({message: 'Completa i campi!'});
         });
     },
 
