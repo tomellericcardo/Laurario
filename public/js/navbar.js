@@ -9,7 +9,7 @@ var navbar = {
         var element = $('.mdc-top-app-bar')[0];
         mdc.topAppBar.MDCTopAppBar.attachTo(element);
         var height = $('.mdc-top-app-bar').css('height');
-        if (!window.location.pathname.match(/^\/(home(.html)?)?$/))
+        if (!window.location.pathname.match(/^\/(home)?$/))
             height = (parseInt(height) + 20) + 'px';
         $('.page-content').css('padding-top', height);
     },
