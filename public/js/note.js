@@ -95,7 +95,7 @@ var note = {
             risposta.note[i] = {
                 id: risposta.note[i][0],
                 titolo: risposta.note[i][1],
-                testo: risposta.note[i][2].replace('\n', '<br>')
+                testo: risposta.note[i][2].replace(/\n/, '<br>')
             };
         }
         return risposta;
