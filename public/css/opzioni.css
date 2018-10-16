@@ -1,7 +1,3 @@
-.mdc-floating-label {
-    color: var(--mdc-theme-secondary)!important;
-}
-
 #date_input {
     font-family: Roboto, sans-serif;
     -moz-osx-font-smoothing: grayscale;
