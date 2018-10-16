@@ -28,8 +28,8 @@ var note = {
 
     init_fields: function() {
         var elements = $('.mdc-text-field');
-        for (element in elements)
-            mdc.textField.MDCTextField.attachTo(element);
+        for (var i = 0; i < elements.length; i++)
+            mdc.textField.MDCTextField.attachTo(elements[i]);
     },
 
     init_snackbar: function() {
