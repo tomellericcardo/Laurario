@@ -16,7 +16,7 @@ class Manager:
         cursore = db.cursor()
         cursore.execute('''
             CREATE TABLE IF NOT EXISTS nota (
-                id SERIAL PRIMARY KEY,
+                id serial PRIMARY KEY,
                 titolo TEXT NOT NULL,
                 testo TEXT NOT NULL
             )
