@@ -78,6 +78,10 @@ var note = {
                 $.get('/html/templates.html', function(contenuto) {
                     var template = $(contenuto).filter('#note').html();
                     $('#note').html(Mustache.render(template, risposta));
+                }).then(function() {
+                    var elements = $('.mdc-card__primary-action, .mdc-card__action-buttons .mdc-button');
+                    for (var i = 0; i < elements.length; i++)
+                        mdc.ripple.MDCRipple.attachTo(elements[i]);
                 });
             },
             error: function() {

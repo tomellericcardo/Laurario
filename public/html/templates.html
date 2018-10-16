@@ -6,21 +6,14 @@
         <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell">
 
-                <div class="mdc-card card-demo">
+                <div class="mdc-card">
                     <div class="mdc-card__primary-action">
-                        <div class="primary-text">
-                            <h2 class="mdc-typography--headline6 title">{{titolo}}</h2>
-                        </div>
-                        <div class="secondary-text">
-                            <p class="mdc-typography--body2 text">{{testo}}</p>
-                        </div>
+                        <h2 class="mdc-typography--headline6 title">{{titolo}}</h2>
+                        <p class="mdc-typography--body2 text">{{testo}}</p>
                     </div>
                     <div class="mdc-card__actions">
                         <div class="mdc-card__action-buttons">
                             <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="note.elimina_nota('{{id}}')">Elimina</button>
-                        </div>
-                        <div class="mdc-card__action-icons">
-                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
                         </div>
                     </div>
                 </div>
