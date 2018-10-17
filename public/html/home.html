@@ -98,6 +98,48 @@
 
         </div>
 
+        <!-- IMPOSTA CORSO -->
+        <div class="mdc-dialog"
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby="my-dialog-title"
+            aria-describedby="my-dialog-content">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <h2 class="mdc-dialog__title">Benvenuto!</h2>
+                    <div class="mdc-dialog__content">
+                        <p class="mdc-typography--body1 text">Seleziona il tuo corso di studi</p>
+
+                        <!-- CORSO -->
+                        <div class="mdc-select" id="container_corso">
+                            <select id="corso" class="mdc-select__native-control">
+                                <option value="" disabled selected></option>
+                            </select>
+                            <label class="mdc-floating-label">Corso di studio</label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+
+                        <!-- ANNO -->
+                        <div class="mdc-select" id="container_anno">
+                            <select id="anno" class="mdc-select__native-control">
+                                <option value="" disabled selected></option>
+                            </select>
+                            <label class="mdc-floating-label">Anno e corso</label>
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- AZIONI -->
+                    <footer class="mdc-dialog__actions">
+                        <button id="imposta" type="button" class="mdc-button mdc-dialog__button">Imposta</button>
+                    </footer>
+
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
         <!-- SCRIPTS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
