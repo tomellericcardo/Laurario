@@ -45,7 +45,8 @@ var home = {
                 home.anno = anno;
                 localStorage.setItem('corso', corso);
                 localStorage.setItem('anno', anno);
-            }
+            } else
+                home.snackbar.show({message: 'Completa tutti i campi'});
         });
     },
 
