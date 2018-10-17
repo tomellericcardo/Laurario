@@ -41,7 +41,7 @@ var note = {
             if (titolo.length > 0 && testo.length > 0)
                 note.aggiungi(titolo, testo);
             else
-                note.snackbar.show({message: 'Completa i campi!'});
+                note.snackbar.show({message: 'Completa tutti i campi'});
         });
     },
 
@@ -59,10 +59,10 @@ var note = {
                 note.leggi_note();
                 note.dialog.close();
                 $('#titolo, #testo').val('');
-                note.snackbar.show({message: 'Nota aggiunta!'});
+                note.snackbar.show({message: 'Nota aggiunta'});
             },
             error: function() {
-                note.snackbar.show({message: 'Impossibile aggiungere la nota!'});
+                note.snackbar.show({message: 'Impossibile aggiungere la nota'});
             }
         });
     },
@@ -85,7 +85,7 @@ var note = {
                 });
             },
             error: function() {
-                note.snackbar.show({message: 'Impossibile leggere le note!'});
+                note.snackbar.show({message: 'Impossibile leggere le note'});
             }
         });
     },
@@ -112,10 +112,10 @@ var note = {
             }),
             success: function(risposta) {
                 note.leggi_note();
-                note.snackbar.show({message: 'Nota eliminata!'});
+                note.snackbar.show({message: 'Nota eliminata'});
             },
             error: function() {
-                note.snackbar.show({message: 'Impossibile eliminare la nota!'});
+                note.snackbar.show({message: 'Impossibile eliminare la nota'});
             }
         });
     }

@@ -17,3 +17,9 @@ body {
 .mdc-floating-label {
     color: var(--mdc-theme-secondary)!important;
 }
+
+.mdc-fab {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+}

@@ -6,12 +6,13 @@ var home = {
         home.init_select();
         home.init_imposta();
         home.init_corso();
+        home.init_snackbar();
         home.init_imposta();
         home.init_orario();
     },
 
     init_ripple: function() {
-        var elements = $('.mdc-list-item, .mdc-button');
+        var elements = $('.mdc-list-item, .mdc-line-ripple, .mdc-button, .mdc-fab');
         for (var i = 0; i < elements.length; i++)
             mdc.ripple.MDCRipple.attachTo(elements[i]);
     },
@@ -38,6 +39,7 @@ var home = {
             var anno = $('#anno').val();
             if (corso && anno) {
                 home.dialog.close();
+                home.snackbar.show({message: 'Corso di studi impostato'});
                 home.corso = corso;
                 home.anno = anno;
                 localStorage.setItem('corso', corso);
@@ -53,8 +55,13 @@ var home = {
             home.dialog.open();
     },
 
+    init_snackbar: function() {
+        var element = $('.mdc-snackbar')[0];
+        home.snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
+    },
+
     init_orario: function() {
-        $('#questa_settimana').on('click', function () {
+        $('#questa_settimana, #orario_veloce').on('click', function () {
             home.orario();
         });
         $('#prossima_settimana').on('click', function () {
@@ -62,6 +69,12 @@ var home = {
         });
         $('#insegnamento').on('click', function () {
             window.location.href = 'https://logistica.univr.it/aule/Orario/?view=easycourse&include=attivita&_lang=it';
+        });
+        $('#opzioni').on('click', function () {
+            if (!home.corso || !home.anno)
+                home.dialog.open();
+            else
+                window.location.href = '/opzioni';
         });
     },
 

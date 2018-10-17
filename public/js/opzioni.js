@@ -2,6 +2,7 @@ var opzioni = {
 
     init: function() {
         opzioni.init_ripple();
+        opzioni.init_corso();
         opzioni.init_data();
         opzioni.init_select();
         opzioni.init_snackbar();
@@ -9,9 +10,16 @@ var opzioni = {
     },
 
     init_ripple: function() {
-        var elements = $('.mdc-line-ripple, .mdc-button');
+        var elements = $('.mdc-line-ripple, .mdc-fab');
         for (var i = 0; i < elements.length; i++)
             mdc.ripple.MDCRipple.attachTo(elements[i]);
+    },
+
+    init_corso: function() {
+        opzioni.corso = localStorage.getItem('corso');
+        opzioni.anno = localStorage.getItem('anno');
+        if (!opzioni.corso || !opzioni.anno)
+            window.location.href = '/home';
     },
 
     init_data: function() {
