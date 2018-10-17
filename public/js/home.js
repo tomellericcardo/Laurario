@@ -36,17 +36,19 @@ var home = {
         $('#imposta').on('click', function() {
             var corso = $('#corso').val();
             var anno = $('#anno').val();
-            if (corso && anno)
-                localStorage.setItem('corso', {
-                    corso: corso,
-                    anno: anno
-                });
+            if (corso && anno) {
+                home.corso = corso;
+                home.anno = anno;
+                localStorage.setItem('corso', corso);
+                localStorage.setItem('anno', anno);
+            }
         });
     },
 
     init_corso: function() {
         home.corso = localStorage.getItem('corso');
-        if (!home.corso)
+        home.anno = localStorage.getItem('anno');
+        if (!home.corso || !home.anno)
             home.dialog.open();
     },
 
@@ -63,12 +65,12 @@ var home = {
     },
 
     orario: function(settimana = false) {
-        if (!home.corso)
+        if (!home.corso || !home.anno)
             home.dialog.open();
         else {
             var url = 'https://logistica.univr.it/aule/Orario/?list=0&anno=2018&visualizzazione_orario=cal&view=easycourse&include=corso&_lang=it&col_cells=0';
-            url += '&corso=' + home.corso.corso;
-            url += '&anno2=' + home.corso.anno;
+            url += '&corso=' + home.corso;
+            url += '&anno2=' + home.anno;
             url += '&date=' + home.crea_data(settimana);
             window.location.href = url;
         }
