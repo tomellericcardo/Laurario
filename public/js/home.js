@@ -2,9 +2,9 @@ var home = {
 
     init: function() {
         home.init_ripple();
-        note.init_dialog();
-        note.init_select();
-        note.init_imposta();
+        home.init_dialog();
+        home.init_select();
+        home.init_imposta();
         home.init_corso();
         home.init_imposta();
         home.init_orario();
