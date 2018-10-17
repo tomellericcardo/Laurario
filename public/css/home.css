@@ -1,8 +1,15 @@
-
 .mdc-list-item__graphic {
     margin: 0 25px 5px 10px;
 }
 
 .mdc-list-item__graphic i {
     font-size: 30px;
+}
+
+.container_corso, .container_anno {
+    width: 100%;
+}
+
+#anno option {
+    display: none;
 }

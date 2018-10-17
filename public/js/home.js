@@ -25,16 +25,10 @@ var home = {
         var elements = $('.mdc-select');
         for (var i = 0; i < elements.length; i++)
             mdc.select.MDCSelect.attachTo(elements[i]);
-        var url = 'https://logistica.univr.it/aule/Orario/index.php?view=easycourse&include=corso&_lang=it'
-        $.get(url, function(contenuto) {
-            var corsi = $(contenuto).filter('#cdl_co').html();
-            $('#corso').html(corsi);
-        });
         $('#corso').on('change', function() {
-            $.get(url + '&corso=' + $('#corso').val(), function(contenuto) {
-                var anni = $(contenuto).filter('#cdl_a2').html();
-                $('#anno').html(anni);
-            });
+            var opzioni = '#corso corso_' + $('#corso').val();
+            $('#corso option').css('display', 'none');
+            $(opzioni).css('display', 'initial');
         });
     },
 
