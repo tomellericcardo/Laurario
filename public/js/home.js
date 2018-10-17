@@ -27,7 +27,7 @@ var home = {
             mdc.select.MDCSelect.attachTo(elements[i]);
         $('#corso').on('change', function() {
             var opzioni = '#anno .corso_' + $('#corso').val();
-            $('#anno option').css('display', 'none');
+            $('#anno .anno').css('display', 'none');
             $(opzioni).css('display', 'initial');
         });
     },
