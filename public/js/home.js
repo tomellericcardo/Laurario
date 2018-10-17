@@ -37,6 +37,7 @@ var home = {
             var corso = $('#corso').val();
             var anno = $('#anno').val();
             if (corso && anno) {
+                home.dialog.close();
                 home.corso = corso;
                 home.anno = anno;
                 localStorage.setItem('corso', corso);
