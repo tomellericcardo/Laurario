@@ -5,6 +5,7 @@ var home = {
         home.init_dialog();
         home.init_select();
         home.init_imposta();
+        home.init_menu();
         home.init_corso();
         home.init_snackbar();
         home.init_imposta();
@@ -45,6 +46,22 @@ var home = {
                 localStorage.setItem('corso', corso);
                 localStorage.setItem('anno', anno);
             }
+        });
+    },
+
+    init_menu: function() {
+        var element = $('.mdc-menu')[0];
+        var menu = new mdc.menu.MDCMenu(element);
+        $('#menu-icon').on('click', function() {
+            menu.open = !menu.open;
+        });
+        $('#informazioni').on('click', function() {
+            window.location.href = '/informazioni';
+        });
+        $('#reimposta').on('click', function() {
+            $('#corso').val('');
+            $('#anno .anno').css('display', 'none');
+            home.dialog.open();
         });
     },
 

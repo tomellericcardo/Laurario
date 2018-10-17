@@ -10,7 +10,7 @@ var note = {
     },
 
     init_ripple: function() {
-        var elements = $('.mdc-button, .mdc-fab');
+        var elements = $('.mdc-line-ripple, .mdc-button, .mdc-fab');
         for (var i = 0; i < elements.length; i++)
             mdc.ripple.MDCRipple.attachTo(elements[i]);
     },

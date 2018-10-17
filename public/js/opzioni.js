@@ -51,9 +51,11 @@ var opzioni = {
             var colore = $('#select_colore').val();
             if (settimana.length > 0 && colore) {
                 settimana = opzioni.converti_data(settimana);
-                var url = 'https://logistica.univr.it/aule/Orario/?list=0&anno=2018&corso=338&anno2=779%7C1&visualizzazione_orario=cal&view=easycourse&include=corso&_lang=it';
-                url += '&col_cells=' + colore;
+                var url = 'https://logistica.univr.it/aule/Orario/?list=0&anno=2018&visualizzazione_orario=cal&view=easycourse&include=corso&_lang=it';
+                url += '&corso=' + opzioni.corso;
+                url += '&anno2=' + opzioni.anno;
                 url += '&date=' + settimana;
+                url += '&col_cells=' + colore;
                 window.location.href = url;
             } else
                 opzioni.snackbar.show({message: 'Completa tutti i campi'});
