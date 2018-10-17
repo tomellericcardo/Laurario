@@ -26,7 +26,7 @@ var home = {
         for (var i = 0; i < elements.length; i++)
             mdc.select.MDCSelect.attachTo(elements[i]);
         $('#corso').on('change', function() {
-            var opzioni = '#anno corso_' + $('#corso').val();
+            var opzioni = '#anno .corso_' + $('#corso').val();
             $('#anno option').css('display', 'none');
             $(opzioni).css('display', 'initial');
         });

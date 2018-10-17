@@ -6,7 +6,7 @@
     font-size: 30px;
 }
 
-.container_corso, .container_anno {
+#container_corso, #container_anno {
     width: 100%;
 }
 
