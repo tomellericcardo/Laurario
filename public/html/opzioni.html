@@ -29,10 +29,32 @@
         <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
             <div class="mdc-top-app-bar__row">
 
-                <!-- TITLE -->
+                <!-- TITOLO -->
                 <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <i id="home" class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</i>
                     <span class="mdc-top-app-bar__title">Opzioni</span>
+                </section>
+
+                <!-- TOOLBAR -->
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                    <span class="mdc-menu-surface--anchor">
+
+                        <!-- ICONA MENU -->
+                        <i id="menu-icon" class="material-icons mdc-top-app-bar__action-item">more_vert</i>
+
+                        <!-- MENU -->
+                        <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                            <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+
+                                <!-- INFORMAZIONI -->
+                                <li id="informazioni" class="mdc-list-item" role="menuitem" tabindex="0">
+                                    Informazioni
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </span>
                 </section>
 
             </div>
@@ -42,7 +64,7 @@
         <div class="mdc-layout-grid page-content">
             <div class="mdc-layout-grid__inner">
 
-                <!-- INPUT -->
+                <!-- CAMPI -->
                 <div class="mdc-layout-grid__cell">
 
                     <!-- SETTIMANA -->
@@ -55,12 +77,8 @@
                     <div class="mdc-select" id="select_container">
                         <select id="select_colore" class="mdc-select__native-control">
                             <option value="" disabled selected></option>
-                            <option value="0">
-                                Per insegnamento
-                            </option>
-                            <option value="1">
-                                Obbligatorie/consigliate
-                            </option>
+                            <option value="0">Per insegnamento</option>
+                            <option value="1">Obbligatorie/consigliate</option>
                         </select>
                         <label class="mdc-floating-label">Colorazione</label>
                         <div class="mdc-line-ripple"></div>

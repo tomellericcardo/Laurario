@@ -3,6 +3,7 @@ var navbar = {
     init: function() {
         navbar.init_element();
         navbar.init_home();
+        navbar.init_menu();
     },
 
     init_element: function() {
@@ -18,7 +19,18 @@ var navbar = {
         $('#home').on('click', function() {
             window.location.href = '/home';
         });
-    }
+    },
+
+    init_menu: function() {
+        var element = $('.mdc-menu')[0];
+        var menu = new mdc.menu.MDCMenu(element);
+        $('#menu-icon').on('click', function() {
+            menu.open = !menu.open;
+        });
+        $('#informazioni').on('click', function() {
+            window.location.href = '/informazioni';
+        });
+    },
 
 };
 

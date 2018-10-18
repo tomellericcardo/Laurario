@@ -4,10 +4,10 @@ var home = {
         home.init_ripple();
         home.init_dialog();
         home.init_select();
-        home.init_imposta();
-        home.init_menu();
-        home.init_corso();
         home.init_snackbar();
+        home.init_imposta();
+        home.init_reimposta();
+        home.init_corso();
         home.init_imposta();
         home.init_orario();
     },
@@ -34,6 +34,11 @@ var home = {
         });
     },
 
+    init_snackbar: function() {
+        var element = $('.mdc-snackbar')[0];
+        home.snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
+    },
+
     init_imposta: function() {
         $('#imposta').on('click', function() {
             var corso = $('#corso').val();
@@ -50,17 +55,9 @@ var home = {
         });
     },
 
-    init_menu: function() {
-        var element = $('.mdc-menu')[0];
-        var menu = new mdc.menu.MDCMenu(element);
-        $('#menu-icon').on('click', function() {
-            menu.open = !menu.open;
-        });
-        $('#informazioni').on('click', function() {
-            window.location.href = '/informazioni';
-        });
+    init_reimposta: function() {
         $('#reimposta').on('click', function() {
-            $('#corso').val('');
+            $('#corso, #anno').val('');
             $('#anno .anno').css('display', 'none');
             home.dialog.open();
         });
@@ -71,11 +68,6 @@ var home = {
         home.anno = localStorage.getItem('anno');
         if (!home.corso || !home.anno)
             home.dialog.open();
-    },
-
-    init_snackbar: function() {
-        var element = $('.mdc-snackbar')[0];
-        home.snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
     },
 
     init_orario: function() {

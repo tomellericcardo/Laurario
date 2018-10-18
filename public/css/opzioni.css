@@ -1,3 +1,5 @@
+/* DATA */
+
 #date_input {
     font-family: Roboto, sans-serif;
     -moz-osx-font-smoothing: grayscale;
@@ -28,12 +30,9 @@
     opacity: 0;
 }
 
+
+/* CAMPI */
+
 #date_input_container, #select_container {
     width: 100%;
-}
-
-#vai {
-    background-color: var(--mdc-theme-secondary);
-    color: var(--mdc-theme-on-secondary);
-    float: right;
 }

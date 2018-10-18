@@ -1,9 +1,14 @@
+/* TEMA */
+
 :root {
     --mdc-theme-primary: #ffb300;
     --mdc-theme-secondary: #ff5722;
     --mdc-theme-on-primary: #ffffff;
     --mdc-theme-on-secondary: #ffffff;
 }
+
+
+/* PAGINA */
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -14,9 +19,15 @@ body {
     padding-bottom: 20px;
 }
 
+
+/* ETICHETTE */
+
 .mdc-floating-label {
     color: var(--mdc-theme-secondary)!important;
 }
+
+
+/* FABs */
 
 .mdc-fab {
     position: fixed;
