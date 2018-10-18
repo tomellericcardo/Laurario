@@ -59,7 +59,7 @@ var note = {
     aggiungi: function(titolo, testo) {
         var nuova_nota = {
             titolo: titolo,
-            testo: testo.replace(/\n/, '<br>')
+            testo: testo.replace(/\n/gi, '<br>')
         };
         var lista_note = note.get_note();
         if (lista_note) {
