@@ -46,78 +46,51 @@ var note = {
     },
 
     aggiungi: function(titolo, testo) {
-        $.ajax({
-            type: 'POST',
-            url: 'aggiungi_nota',
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({
-                titolo: titolo,
-                testo: testo
-            }),
-            success: function(risposta) {
-                note.leggi_note();
-                note.dialog.close();
-                $('#titolo, #testo').val('');
-                note.snackbar.show({message: 'Nota aggiunta'});
-            },
-            error: function() {
-                note.snackbar.show({message: 'Impossibile aggiungere la nota'});
-            }
-        });
+        var nuova_nota = {
+            titolo: titolo,
+            testo: testo
+        };
+        var lista_note = localStorage.getItem('note');
+        if (lista_note) {
+            nuova_nota.id = lista_note.length;
+            lista_note.push(nuova_nota);
+        } else {
+            nuova_nota.id = 0;
+            lista_note = [nuova_nota];
+        }
+        localStorage.setItem('note', lista_note);
+        note.leggi_note();
+        note.dialog.close();
+        $('#titolo, #testo').val('');
+        note.snackbar.show({message: 'Nota aggiunta'});
     },
 
     leggi_note: function() {
-        $.ajax({
-            type: 'POST',
-            url: 'leggi_note',
-            contentType: 'application/json',
-            dataType: 'json',
-            success: function(risposta) {
-                risposta = note.formatta_note(risposta);
-                $.get('/html/templates.html', function(contenuto) {
-                    var template = $(contenuto).filter('#note').html();
-                    $('#note').html(Mustache.render(template, risposta));
-                }).then(function() {
-                    var elements = $('.mdc-card__primary-action, .mdc-card__action-buttons .mdc-button');
-                    for (var i = 0; i < elements.length; i++)
-                        mdc.ripple.MDCRipple.attachTo(elements[i]);
-                });
-            },
-            error: function() {
-                note.snackbar.show({message: 'Impossibile leggere le note'});
-            }
+        var lista_note = localStorage.getItem('note');
+        $.get('/html/templates.html', function(contenuto) {
+            var template = $(contenuto).filter('#note').html();
+            $('#note').html(Mustache.render(template, {note: lista_note}));
+        }).then(function() {
+            var elements = $('.mdc-card__primary-action, .mdc-card__action-buttons .mdc-button');
+            for (var i = 0; i < elements.length; i++)
+                mdc.ripple.MDCRipple.attachTo(elements[i]);
         });
-    },
-
-    formatta_note: function(risposta) {
-        for (var i = 0; i < risposta.note.length; i++) {
-            risposta.note[i] = {
-                id: risposta.note[i][0],
-                titolo: risposta.note[i][1],
-                testo: risposta.note[i][2].replace(/\n/gi, '<br>')
-            };
-        }
-        return risposta;
     },
 
     elimina_nota: function(id) {
-        $.ajax({
-            type: 'POST',
-            url: 'elimina_nota',
-            contentType: 'application/json',
-            dataType: 'json',
-            data: JSON.stringify({
-                id: id
-            }),
-            success: function(risposta) {
-                note.leggi_note();
-                note.snackbar.show({message: 'Nota eliminata'});
-            },
-            error: function() {
-                note.snackbar.show({message: 'Impossibile eliminare la nota'});
+        var lista_note = localStorage.getItem('note');
+        var nuova_lista = [];
+        var nota_corrente;
+        for (var i = 0; i < lista_note.length; i++) {
+            nota_corrente = lista_note[i];
+            if (nota_corrente.id != id) {
+                nota_corrente.id = nuova_lista.length;
+                nuova_lista.push(nota_corrente);
             }
-        });
+        }
+        localStorage.setItem('note', nuova_lista);
+        note.leggi_note();
+        note.snackbar.show({message: 'Nota eliminata'});
     }
 
 };
