@@ -45,12 +45,23 @@ var note = {
         });
     },
 
+    get_note: function() {
+        var stringa_note = localStorage.getItem('note')
+        var lista_note = JSON.parse(stringa_note);
+        return lista_note;
+    };
+
+    set_note: function(lista_note) {
+        var stringa_note = JSON.stringify(lista_note)
+        localStorage.setItem('note', stringa_note);
+    };
+
     aggiungi: function(titolo, testo) {
         var nuova_nota = {
             titolo: titolo,
             testo: testo
         };
-        var lista_note = localStorage.getItem('note');
+        var lista_note = note.getNote();
         if (lista_note) {
             nuova_nota.id = lista_note.length;
             lista_note.push(nuova_nota);
@@ -58,7 +69,7 @@ var note = {
             nuova_nota.id = 0;
             lista_note = [nuova_nota];
         }
-        localStorage.setItem('note', lista_note);
+        note.set_note(lista_note);
         note.leggi_note();
         note.dialog.close();
         $('#titolo, #testo').val('');
@@ -66,7 +77,7 @@ var note = {
     },
 
     leggi_note: function() {
-        var lista_note = localStorage.getItem('note');
+        var lista_note = note.get_note();
         $.get('/html/templates.html', function(contenuto) {
             var template = $(contenuto).filter('#note').html();
             $('#note').html(Mustache.render(template, {note: lista_note}));
@@ -78,7 +89,7 @@ var note = {
     },
 
     elimina_nota: function(id) {
-        var lista_note = localStorage.getItem('note');
+        var lista_note = note.get_note();
         var nuova_lista = [];
         var nota_corrente;
         for (var i = 0; i < lista_note.length; i++) {
@@ -88,7 +99,7 @@ var note = {
                 nuova_lista.push(nota_corrente);
             }
         }
-        localStorage.setItem('note', nuova_lista);
+        note.set_note(nuova_lista);
         note.leggi_note();
         note.snackbar.show({message: 'Nota eliminata'});
     }
