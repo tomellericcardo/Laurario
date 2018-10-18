@@ -49,12 +49,12 @@ var note = {
         var stringa_note = localStorage.getItem('note')
         var lista_note = JSON.parse(stringa_note);
         return lista_note;
-    };
+    },
 
     set_note: function(lista_note) {
         var stringa_note = JSON.stringify(lista_note)
         localStorage.setItem('note', stringa_note);
-    };
+    },
 
     aggiungi: function(titolo, testo) {
         var nuova_nota = {
