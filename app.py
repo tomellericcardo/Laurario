@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, send_from_directory, request
-from manager import Manager
-from os import environ
+from flask import Flask, send_from_directory
 from json import dumps
 
 
