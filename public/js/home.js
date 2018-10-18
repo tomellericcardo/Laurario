@@ -35,7 +35,7 @@ var home = {
     },
 
     init_snackbar: function() {
-        var element = $('.mdc-snackbar')[0];
+        var element = $('#messaggio')[0];
         home.snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
     },
 
