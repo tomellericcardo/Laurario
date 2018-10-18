@@ -8,7 +8,6 @@ var home = {
         home.init_imposta();
         home.init_reimposta();
         home.init_corso();
-        home.init_imposta();
         home.init_orario();
     },
 
@@ -35,7 +34,7 @@ var home = {
     },
 
     init_snackbar: function() {
-        var element = $('#messaggio')[0];
+        var element = $('.mdc-snackbar')[0];
         home.snackbar = mdc.snackbar.MDCSnackbar.attachTo(element);
     },
 
