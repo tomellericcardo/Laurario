@@ -61,7 +61,7 @@ var note = {
             titolo: titolo,
             testo: testo
         };
-        var lista_note = note.getNote();
+        var lista_note = note.get_note();
         if (lista_note) {
             nuova_nota.id = lista_note.length;
             lista_note.push(nuova_nota);
