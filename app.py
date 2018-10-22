@@ -19,11 +19,6 @@ def home():
 def invia_pagina(pagina):
     return send_from_directory('public/html/', pagina + '.html')
 
-# Service worker
-@app.route('/service-worker.js')
-def service_worker():
-    return send_from_directory('public/js/service-worker.js')
-
 # Altri files
 @app.route('/<cartella>/<nome_file>')
 def invia_file(cartella, nome_file):

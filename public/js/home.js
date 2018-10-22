@@ -1,7 +1,6 @@
 var home = {
 
     init: function() {
-        home.install_sw();
         home.init_ripple();
         home.init_dialog();
         home.init_select();
@@ -10,10 +9,6 @@ var home = {
         home.init_reimposta();
         home.init_corso();
         home.init_orario();
-    },
-
-    install_sw: function() {
-        navigator.serviceWorker.register('/service-worker.js');
     },
 
     init_ripple: function() {
