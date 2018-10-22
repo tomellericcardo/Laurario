@@ -1,10 +1,3 @@
-/* MENU */
-
-.mdc-menu {
-    width: 160px;
-}
-
-
 /* LISTA OPZIONI */
 
 .mdc-list-item__graphic {
@@ -20,6 +13,10 @@
 
 #container_corso, #container_anno {
     width: 100%;
+}
+
+#container_anno {
+    margin-top: -2px;
 }
 
 #anno .anno {

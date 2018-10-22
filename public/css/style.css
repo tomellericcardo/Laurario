@@ -20,6 +20,13 @@ body {
 }
 
 
+/* MENU */
+
+.mdc-menu {
+    width: 160px;
+}
+
+
 /* ETICHETTE */
 
 .mdc-floating-label {
