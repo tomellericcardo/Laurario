@@ -22,14 +22,16 @@ var navbar = {
     },
 
     init_menu: function() {
-        var element = $('.mdc-menu')[0];
-        var menu = new mdc.menu.MDCMenu(element);
-        $('#menu-icon').on('click', function() {
-            menu.open = !menu.open;
-        });
-        $('#informazioni').on('click', function() {
-            window.location.href = '/info';
-        });
+        if (!window.location.pathname.match(/^\/info$/)) {
+            var element = $('.mdc-menu')[0];
+            var menu = new mdc.menu.MDCMenu(element);
+            $('#menu-icon').on('click', function() {
+                menu.open = !menu.open;
+            });
+            $('#informazioni').on('click', function() {
+                window.location.href = '/info';
+            });
+        }
     },
 
 };
