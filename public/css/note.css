@@ -17,13 +17,13 @@
 
 .vuoto {
     width: 100%;
-    height: 70vh;
-    color: grey;
+    padding: 100px 0 100px 0;
+    color: rgba(0,0,0,0.40);
     text-align: center;
 }
 
 .vuoto i {
-    font-size: 40px;
+    font-size: 100px;
 }
 
 
