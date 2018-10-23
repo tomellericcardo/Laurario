@@ -25,6 +25,7 @@
     -moz-appearance: none;
     appearance: none;
     color: rgba(0,0,0,0.87);
+    outline: none;
 }
 
 #date_input::-webkit-calendar-picker-indicator {
@@ -36,4 +37,8 @@
 
 #date_input_container, #select_container {
     width: 100%;
+}
+
+#date_input_container {
+    margin-bottom: 2px;
 }

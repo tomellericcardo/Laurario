@@ -15,10 +15,6 @@
     width: 100%;
 }
 
-#container_anno {
-    margin-top: -2px;
-}
-
 #anno .anno {
     display: none;
 }
