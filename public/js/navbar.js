@@ -28,7 +28,7 @@ var navbar = {
             menu.open = !menu.open;
         });
         $('#informazioni').on('click', function() {
-            window.location.href = '/informazioni';
+            window.location.href = '/info';
         });
     },
 
