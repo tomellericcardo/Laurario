@@ -17,7 +17,8 @@
 
 .vuoto {
     width: 100%;
-    padding: 100px 0 70px 0;
+    padding-top: 100px;
+    padding-bottom: 70px;
     color: rgba(0,0,0,0.40);
     text-align: center;
 }

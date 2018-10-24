@@ -4,37 +4,29 @@
 <script type="text/html" id="note">
 
     {{#note}}
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell">
 
-                <!-- NOTA -->
-                <div class="mdc-card">
-                    <div class="mdc-card__primary-action">
-                        <h2 class="mdc-typography--headline6 title">{{titolo}}</h2>
-                        <p class="mdc-typography--body1 text">{{{testo}}}</p>
-                    </div>
-                    <div class="mdc-card__actions">
-                        <div class="mdc-card__action-buttons">
-                            <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="note.elimina_nota('{{id}}')">Elimina</button>
-                        </div>
-                    </div>
+        <!-- NOTA -->
+        <div class="mdc-card">
+            <div class="mdc-card__primary-action">
+                <h2 class="mdc-typography--headline6 title">{{titolo}}</h2>
+                <p class="mdc-typography--body1 text">{{{testo}}}</p>
+            </div>
+            <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-card__action mdc-card__action--button" onclick="note.elimina_nota('{{id}}')">Elimina</button>
                 </div>
-
             </div>
         </div>
+
     {{/note}}
     {{^note}}
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell">
 
-                <!-- VUOTO -->
-                <div class="vuoto">
-                    <i class="material-icons">insert_drive_file</i>
-                    <p class="mdc-typography--body1 text">Non c'è nessuna<br>nota qui</p>
-                </div>
-
-            </div>
+        <!-- VUOTO -->
+        <div class="vuoto">
+            <i class="material-icons">insert_drive_file</i>
+            <p class="mdc-typography--body1 text">Non c'è nessuna<br>nota qui</p>
         </div>
+
     {{/note}}
 
 </script>
