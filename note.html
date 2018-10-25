@@ -5,7 +5,8 @@
         <title>Laurario</title>
 
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" content="Orario personale delle lezioni universitarie">
 
         <!-- FONTS & ICONS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -89,15 +90,15 @@
 
                         <!-- TITOLO -->
                         <div id="elemento_titolo" class="mdc-text-field">
-                            <input type="text" id="titolo" class="mdc-text-field__input">
-                            <label class="mdc-floating-label" for="my-text-field">Titolo</label>
+                            <input type="text" id="titolo" name="titolo" class="mdc-text-field__input">
+                            <label for="titolo" class="mdc-floating-label" for="my-text-field">Titolo</label>
                             <div class="mdc-line-ripple"></div>
                         </div>
 
                         <!-- TESTO -->
                         <div class="mdc-text-field mdc-text-field--textarea">
-                            <textarea id="testo" class="mdc-text-field__input"></textarea>
-                            <label for="textarea" class="mdc-floating-label">Nota</label>
+                            <textarea id="testo" name="testo" class="mdc-text-field__input"></textarea>
+                            <label for="testo" class="mdc-floating-label">Nota</label>
                         </div>
 
                     </div>

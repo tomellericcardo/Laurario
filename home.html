@@ -5,7 +5,8 @@
         <title>Laurario</title>
 
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" content="Orario personale delle lezioni universitarie">
 
         <!-- FONTS & ICONS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -151,7 +152,7 @@
 
                         <!-- CORSO -->
                         <div class="mdc-select" id="container_corso">
-                            <select id="corso" class="mdc-select__native-control">
+                            <select id="corso" name="corso" class="mdc-select__native-control">
                                 <option value="" disabled selected></option>
                                 <option value="886">Centro linguistico di ateneo</option>
                                 <option value="340">Laurea in beni culturali</option>
@@ -217,13 +218,13 @@
                                 <option value="794">Laurea magistrale interateneo in science and technology of bio and nanomaterials</option>
                                 <option value="563">Laurea magistrale interateneo in scienze storiche</option>
                             </select>
-                            <label class="mdc-floating-label">Corso di studio</label>
+                            <label for="corso" class="mdc-floating-label">Corso di studio</label>
                             <div class="mdc-line-ripple"></div>
                         </div>
 
                         <!-- ANNO -->
                         <div class="mdc-select" id="container_anno">
-                            <select id="anno" class="mdc-select__native-control">
+                            <select id="anno" name="anno" class="mdc-select__native-control">
                                 <option value="" disabled selected></option>
 
                                 <option value="999%7C1" class="anno corso_886">1 anno - Unico</option>
@@ -506,7 +507,7 @@
                                 <option value="790%7C2" class="anno corso_563">2 anno - Societa' e istituzioni nell'eta' moderna e contemporanea</option>
 
                             </select>
-                            <label class="mdc-floating-label">Anno e corso</label>
+                            <label for="anno" class="mdc-floating-label">Anno e corso</label>
                             <div class="mdc-line-ripple"></div>
                         </div>
 

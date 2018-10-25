@@ -5,7 +5,8 @@
         <title>Laurario</title>
 
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="description" content="Orario personale delle lezioni universitarie">
 
         <!-- FONTS & ICONS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -77,19 +78,19 @@
 
             <!-- SETTIMANA -->
             <div class="mdc-select" id="date_input_container">
-                <input type="date" id="date_input">
-                <label class="mdc-floating-label mdc-floating-label--float-above">Settimana</label>
+                <input type="date" id="date_input" name="date_input">
+                <label for="date_input" class="mdc-floating-label mdc-floating-label--float-above">Settimana</label>
                 <div class="mdc-line-ripple"></div>
             </div>
 
             <!-- COLORAZIONE -->
             <div class="mdc-select" id="select_container">
-                <select id="select_colore" class="mdc-select__native-control">
+                <select id="select_colore" name="select_colore" class="mdc-select__native-control">
                     <option value="" disabled selected></option>
                     <option value="0">Per insegnamento</option>
                     <option value="1">Obbligatorie/consigliate</option>
                 </select>
-                <label class="mdc-floating-label">Colorazione</label>
+                <label for="select_colore" class="mdc-floating-label">Colorazione</label>
                 <div class="mdc-line-ripple"></div>
             </div>
 
