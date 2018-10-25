@@ -14,7 +14,7 @@ var TOCACHE = [
     '/js/navbar.js',
     '/js/home.js',
     '/js/note.js',
-    '/js/opzioni.js'
+    '/js/opzioni.js',
     '/js/info.js'
 ];
 
