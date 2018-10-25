@@ -1,5 +1,11 @@
 var CACHE = 'cache-and-update';
 var TOCACHE = [
+    'fonts.googleapis.com/css?family=Roboto',
+    'fonts.googleapis.com/icon?family=Material+Icons',
+    'unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
+    'unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
+    'code.jquery.com/jquery-3.3.1.min.js',
+    'cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js',
     '/',
     '/home',
     '/note',
