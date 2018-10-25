@@ -1,11 +1,15 @@
 var CACHE = 'cache-and-update';
-var TOCACHE = [
+
+var CDN = [
     'fonts.googleapis.com/css?family=Roboto',
     'fonts.googleapis.com/icon?family=Material+Icons',
     'unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
     'unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
     'code.jquery.com/jquery-3.3.1.min.js',
-    'cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js',
+    'cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js'
+];
+
+var TOCACHE = [
     '/',
     '/home',
     '/note',
@@ -24,6 +28,7 @@ var TOCACHE = [
     '/js/info.js'
 ];
 
+
 self.addEventListener('install', function(evt) {
     evt.waitUntil(precache());
 });
@@ -33,23 +38,29 @@ self.addEventListener('fetch', function(evt) {
     evt.waitUntil(update(evt.request));
 });
 
+
 function precache() {
-    return caches.open(CACHE).then(function (cache) {
+    var address, request;
+    for (address in CDN) {
+        request = new Request(address, {mode: 'no-cors'});
+        fetch(request).then(response => cache.put(request, response));
+    }
+    return caches.open(CACHE).then(function(cache) {
         return cache.addAll(TOCACHE);
     });
 }
 
 function fromCache(request) {
-    return caches.open(CACHE).then(function (cache) {
-        return cache.match(request).then(function (matching) {
+    return caches.open(CACHE).then(function(cache) {
+        return cache.match(request).then(function(matching) {
             return matching || Promise.reject('no-match');
         });
     });
 }
 
 function update(request) {
-    return caches.open(CACHE).then(function (cache) {
-        return fetch(request).then(function (response) {
+    return caches.open(CACHE).then(function(cache) {
+        return fetch(request).then(function(response) {
             return cache.put(request, response);
         });
     });
