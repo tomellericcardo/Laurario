@@ -12,6 +12,7 @@ var TOCACHE = [
     '/css/note.css',
     '/css/opzioni.css',
     '/css/info.css',
+    '/js/mustache.min.js',
     '/js/navbar.js',
     '/js/home.js',
     '/js/note.js',
