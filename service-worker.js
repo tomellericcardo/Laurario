@@ -40,12 +40,14 @@ self.addEventListener('fetch', function(evt) {
 
 
 function precache() {
-    var address, request;
-    for (address in CDN) {
-        request = new Request(address, {mode: 'no-cors'});
-        fetch(request).then(response => cache.put(request, response));
-    }
     return caches.open(CACHE).then(function(cache) {
+        var address, request;
+        for (address in CDN) {
+            request = new Request(address, {mode: 'no-cors'});
+            fetch(request).then(function(response) {
+                return cache.put(request, response);
+            });
+        }
         return cache.addAll(TOCACHE);
     });
 }
