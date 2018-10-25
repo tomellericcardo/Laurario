@@ -45,7 +45,7 @@ function precache() {
         for (address in CDN) {
             request = new Request(address, {mode: 'no-cors'});
             fetch(request).then(function(response) {
-                return cache.put(request, response);
+                cache.put(request, response);
             });
         }
         return cache.addAll(TOCACHE);
