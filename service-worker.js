@@ -6,7 +6,7 @@ var TOCACHE = [
     '/note',
     '/opzioni',
     '/info',
-    '/img/icon.png',
+    '/img/icon-512x512.png',
     '/html/templates.html',
     '/css/style.css',
     '/css/home.css',
