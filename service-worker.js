@@ -1,14 +1,5 @@
 var CACHE = 'cache-and-update';
 
-var CDN = [
-    'fonts.googleapis.com/css?family=Roboto',
-    'fonts.googleapis.com/icon?family=Material+Icons',
-    'unpkg.com/material-components-web@latest/dist/material-components-web.min.css',
-    'unpkg.com/material-components-web@latest/dist/material-components-web.min.js',
-    'code.jquery.com/jquery-3.3.1.min.js',
-    'cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js'
-];
-
 var TOCACHE = [
     '/',
     '/home',
@@ -41,13 +32,6 @@ self.addEventListener('fetch', function(evt) {
 
 function precache() {
     return caches.open(CACHE).then(function(cache) {
-        var address, request;
-        for (address in CDN) {
-            request = new Request(address, {mode: 'no-cors'});
-            fetch(request).then(function(response) {
-                cache.put(request, response);
-            });
-        }
         return cache.addAll(TOCACHE);
     });
 }
