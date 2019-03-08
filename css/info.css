@@ -15,3 +15,16 @@
     color: #ffffff;
     margin-top: 0;
 }
+
+
+/* TESTO */
+
+.testo {
+    padding: 20px 10px;
+    text-align: center;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #018786;
+}
