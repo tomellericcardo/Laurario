@@ -2,7 +2,7 @@
     "name": "Laurario",
     "short_name": "Laurario",
     "description": "Orario personale delle lezioni universitarie",
-    "start_url": "/home",
+    "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#ffb300",
