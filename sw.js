@@ -1,24 +1,23 @@
-var CACHE = 'cache-and-update';
+var CACHE = 'LAURARIO-v2';
 
 var TOCACHE = [
     '/',
-    '/home',
     '/note',
     '/opzioni',
     '/info',
-    '/img/icon-512x512.png',
-    '/html/templates.html',
-    '/css/style.css',
-    '/css/home.css',
-    '/css/note.css',
-    '/css/opzioni.css',
-    '/css/info.css',
-    '/js/mustache.min.js',
-    '/js/navbar.js',
-    '/js/home.js',
-    '/js/note.js',
-    '/js/opzioni.js',
-    '/js/info.js'
+    '/images/icon-512x512.png',
+    '/templates/note.html',
+    '/styles/main.css',
+    '/styles/home.css',
+    '/styles/note.css',
+    '/styles/opzioni.css',
+    '/styles/info.css',
+    '/scripts/mustache.min.js',
+    '/scripts/navbar.js',
+    '/scripts/home.js',
+    '/scripts/note.js',
+    '/scripts/opzioni.js',
+    '/scripts/info.js'
 ];
 
 

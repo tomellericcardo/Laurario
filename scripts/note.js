@@ -78,7 +78,7 @@ var note = {
 
     leggi_note: function() {
         var lista_note = note.get_note();
-        $.get('/html/templates.html', function(contenuto) {
+        $.get('/templates/note.html', function(contenuto) {
             var template = $(contenuto).filter('#note').html();
             $('#note').html(Mustache.render(template, {note: lista_note}));
         }).then(function() {

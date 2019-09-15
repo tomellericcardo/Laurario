@@ -1,3 +1,5 @@
+var ORARIO = 'https://logistica.univr.it/PortaleStudentiUnivr/index.php?view=easycourse&form-type=corso&include=corso&visualizzazione_orario=cal&periodo_didattico=&list=0&week_grid_type=-1&ar_codes_=&ar_select_=&empty_box=0&only_grid=0&faculty_group=0';
+
 var opzioni = {
 
     init: function() {
@@ -18,8 +20,7 @@ var opzioni = {
     init_corso: function() {
         opzioni.corso = localStorage.getItem('corso');
         opzioni.anno = localStorage.getItem('anno');
-        if (!opzioni.corso || !opzioni.anno)
-            window.location.href = '/home';
+        if (!opzioni.corso || !opzioni.anno) window.location.href = '/';
     },
 
     init_data: function() {
@@ -51,14 +52,15 @@ var opzioni = {
             var colore = $('#select_colore').val();
             if (settimana.length > 0 && colore) {
                 settimana = opzioni.converti_data(settimana);
-                var url = 'https://logistica.univr.it/aule/Orario/?list=0&anno=2018&visualizzazione_orario=cal&view=easycourse&include=corso&_lang=it';
+                var data = new Date();
+                var anno = data.getFullYear();
+                url = ORARIO + '&anno=' + anno;
                 url += '&corso=' + opzioni.corso;
-                url += '&anno2=' + opzioni.anno;
+                url += '&anno2%5B%5D=' + opzioni.anno;
                 url += '&date=' + settimana;
                 url += '&col_cells=' + colore;
                 window.location.href = url;
-            } else
-                opzioni.snackbar.show({message: 'Completa tutti i campi'});
+            } else opzioni.snackbar.show({message: 'Completa tutti i campi'});
         });
     },
 

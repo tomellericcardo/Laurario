@@ -17,7 +17,7 @@ var navbar = {
 
     init_home: function() {
         $('#home').on('click', function() {
-            window.location.href = '/home';
+            window.location.href = '/';
         });
     },
 
