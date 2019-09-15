@@ -9,7 +9,7 @@
     "background_color": "#ffb300",
     "icons": [
         {
-            "src": "\/img\/icon-homescreen.png",
+            "src": "\/images\/icon-homescreen.png",
             "sizes": "512x512",
             "type": "image\/png"
         }
